@@ -17,21 +17,22 @@ You have access to a Python script that provides search and read capabilities. E
 
 ### 1. Search the Web
 ```bash
-.pi/agent/skills/pi-deep-research/venv/bin/python .pi/agent/skills/pi-deep-research/scripts/research.py search "your search query"
+~/.pi/agent/skills/pi-deep-research/venv/bin/python ~/.pi/agent/skills/pi-deep-research/scripts/research.py search "your search query"
 ```
 Returns a list of search results with Titles, URLs, and Snippets.
 
 ### 2. Read a Webpage
 ```bash
-.pi/agent/skills/pi-deep-research/venv/bin/python .pi/agent/skills/pi-deep-research/scripts/research.py read "https://example.com"
+~/.pi/agent/skills/pi-deep-research/venv/bin/python ~/.pi/agent/skills/pi-deep-research/scripts/research.py read "https://example.com"
 ```
 Extracts and prints the readable text content from the URL.
 
 ## Deep Research Workflow (Instructions for the Agent)
 
 When a user asks you to perform "deep research" or use this skill, follow these steps autonomously:
-1. **Initial Search:** Formulate 1-2 broad search queries and execute them using the `search` command.
-2. **Read Sources:** Identify the most promising URLs from the search results and `read` them.
-3. **Iterate:** Analyze what you've read. Identify knowledge gaps or conflicting information. Run follow-up, more specific `search` queries and `read` additional sources to dig deeper.
-4. **Synthesize:** Compile the gathered information into a structured, comprehensive Markdown report (using the `write` tool to save it, or outputting it directly).
-5. **Cite Sources:** Ensure every section includes clear inline citations and a "References" section with the URLs you actually read.
+1. **Plan & Review:** Formulate a research plan detailing the scope, key questions to investigate, and the initial search queries. Present this plan to the user for review and approval before proceeding with any searches.
+2. **Initial Search:** Once the plan is approved, execute the initial search queries using the `search` command.
+3. **Read Sources:** Identify the most promising URLs from the search results and `read` them.
+4. **Iterate:** Analyze what you've read. Identify knowledge gaps or conflicting information. Run follow-up, more specific `search` queries and `read` additional sources to dig deeper.
+5. **Synthesize:** Compile the gathered information into a structured, comprehensive Markdown report (using the `write` tool to save it, or outputting it directly).
+6. **Cite Sources:** Ensure every section includes clear inline citations and a "References" section with the URLs you actually read.
